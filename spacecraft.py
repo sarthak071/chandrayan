@@ -24,3 +24,13 @@ class Spacecraft:
             self.y += 1
         elif self.direction == "W":
             self.x += 1
+    
+    def turn_up(self):
+        if self.direction == "N":
+            self.direction = "U"
+        elif self.direction == "E":
+            self.direction = "U"
+        elif self.direction == "S":
+            self.direction = "D"
+        elif self.direction == "W":
+            self.direction = "D"
