@@ -69,5 +69,20 @@ class Spacecraft:
         elif self.direction == "W":
             self.direction = "D"
 
+    def execute_commands(self, commands):
+        for command in commands:
+            if command == "f":
+                self.move_forward()
+            elif command == "b":
+                self.move_backward()
+            elif command == "l":
+                self.rotate_left()
+            elif command == "r":
+                self.rotate_right()
+            elif command == "u":
+                self.turn_up()
+            elif command == "d":
+                self.turn_down()
+
 
  
