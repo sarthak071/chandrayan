@@ -35,39 +35,37 @@ class Spacecraft:
 
 
     def rotate_right(self):
-        directions = ["N", "E", "S", "W"]
+        directions = ["N", "E", "S", "W", "Up", "Down"]
         current_index = directions.index(self.direction)
         new_index = (current_index + 1) % len(directions)
         self.direction = directions[new_index]
 
     def rotate_left(self):
-        directions = ["N", "E", "S", "W" ]
+        directions = ["N", "E", "S", "W", "Up", "Down"]
         current_index = directions.index(self.direction)
         new_index = (current_index - 1) % len(directions)
         self.direction = directions[new_index]
 
     def turn_down(self):
         if self.direction == "N":
-            self.direction = "D"
+            self.direction = "Down"
         elif self.direction == "E":
-            self.direction = "D"
+            self.direction = "Down"
         elif self.direction == "S":
-            self.direction = "U"
-
+            self.direction = "Up"
         elif self.direction == "W":
-            self.direction = "U"
+            self.direction = "Up"
     
-
     
     def turn_up(self):
         if self.direction == "N":
-            self.direction = "U"
+            self.direction = "Up"
         elif self.direction == "E":
-            self.direction = "U"
+            self.direction = "Up"
         elif self.direction == "S":
-            self.direction = "D"
+            self.direction = "Down"
         elif self.direction == "W":
-            self.direction = "D"
+            self.direction = "Down"
 
     def execute_commands(self, commands):
         for command in commands:
@@ -85,4 +83,33 @@ class Spacecraft:
                 self.turn_down()
 
 
- 
+    def get_position(self):
+        return self.x, self.y, self.z
+    
+def main():
+    # Get user input for starting position and direction
+    x = int(input("Enter initial x coordinate: "))
+    y = int(input("Enter initial y coordinate: "))
+    z = int(input("Enter initial z coordinate: "))
+    direction = input("Enter initial direction (N, S, E, W, Up, Down): ")
+
+    # Get user input for commands
+    commands = input("Enter commands (f/b/l/r/u/d): ").split()
+
+    # Create a Spacecraft object
+    spacecraft = Spacecraft(x, y, z, direction)
+
+    # Execute the commands
+    spacecraft.execute_commands(commands)
+
+    # Get the final position and direction
+    final_position = spacecraft.get_position()
+    final_direction = spacecraft.direction
+
+    # Display the results
+    print(f"Final Position: {final_position}")
+    print(f"Final Direction: {final_direction}")
+
+if __name__ == "__main__":
+    main()
+

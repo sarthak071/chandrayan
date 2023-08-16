@@ -25,12 +25,12 @@ class TestSpacecraftMethods(unittest.TestCase):
     def test_turn_up(self):
         spacecraft = Spacecraft(0, 0, 0, "N")
         spacecraft.turn_up()
-        self.assertEqual(spacecraft.direction, "U")
+        self.assertEqual(spacecraft.direction, "Up")
 
     def test_turn_down(self):
         spacecraft = Spacecraft(0, 0, 0, "N")
         spacecraft.turn_down()
-        self.assertEqual(spacecraft.direction, "D")
+        self.assertEqual(spacecraft.direction, "Down")
 
     def test_rotate_left_N(self):
         spacecraft = Spacecraft(0, 0, 0, "N")
