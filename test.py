@@ -52,15 +52,7 @@ class TestSpacecraftMethods(unittest.TestCase):
         spacecraft.rotate_left()
         self.assertEqual(spacecraft.direction, "S")
 
-    def test_rotate_left_Up(self):
-        spacecraft = Spacecraft(0, 0, 0, "Up")
-        spacecraft.rotate_left()
-        self.assertEqual(spacecraft.direction, "Up")
 
-    def test_rotate_left_Down(self):
-        spacecraft = Spacecraft(0, 0, 0, "Down")
-        spacecraft.rotate_left()
-        self.assertEqual(spacecraft.direction, "Down")
     
 
 

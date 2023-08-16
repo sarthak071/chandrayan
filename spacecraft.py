@@ -40,6 +40,12 @@ class Spacecraft:
         new_index = (current_index + 1) % len(directions)
         self.direction = directions[new_index]
 
+    def rotate_left(self):
+        directions = ["N", "E", "S", "W" ]
+        current_index = directions.index(self.direction)
+        new_index = (current_index - 1) % len(directions)
+        self.direction = directions[new_index]
+
     def turn_down(self):
         if self.direction == "N":
             self.direction = "D"
@@ -47,7 +53,7 @@ class Spacecraft:
             self.direction = "D"
         elif self.direction == "S":
             self.direction = "U"
-            
+
         elif self.direction == "W":
             self.direction = "U"
     
@@ -62,3 +68,6 @@ class Spacecraft:
             self.direction = "D"
         elif self.direction == "W":
             self.direction = "D"
+
+
+ 
