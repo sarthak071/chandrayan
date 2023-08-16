@@ -47,6 +47,7 @@ class Spacecraft:
             self.direction = "D"
         elif self.direction == "S":
             self.direction = "U"
+            
         elif self.direction == "W":
             self.direction = "U"
     
