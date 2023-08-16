@@ -11,6 +11,12 @@ class TestSpacecraftMethods(unittest.TestCase):
         spacecraft = Spacecraft(0, 0, 0, "N")
         spacecraft.rotate_right()
         self.assertEqual(spacecraft.direction, "E")
+        
+    def test_move_backward(self):
+        spacecraft = Spacecraft(0, 0, 0, "N")
+        spacecraft.move_backward()
+        self.assertEqual(spacecraft.y, -1)
+
 
 if __name__ == '__main__':
     unittest.main()
