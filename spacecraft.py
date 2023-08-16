@@ -8,6 +8,16 @@ class Spacecraft:
     def move_forward(self):
         if self.direction == "N":
             self.y += 1
+        elif self.direction == "S":
+            self.y -= 1
+        elif self.direction == "E":
+            self.x += 1
+        elif self.direction == "W":
+            self.x -= 1
+        elif self.direction == "Up":
+            self.z += 1
+        elif self.direction == "Down":
+            self.z -= 1
     
     def rotate_right(self):
         directions = ["N", "E", "S", "W"]
