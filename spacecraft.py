@@ -18,13 +18,7 @@ class Spacecraft:
             self.z += 1
         elif self.direction == "Down":
             self.z -= 1
-    
-    def rotate_right(self):
-        directions = ["N", "E", "S", "W"]
-        current_index = directions.index(self.direction)
-        new_index = (current_index + 1) % len(directions)
-        self.direction = directions[new_index]
-    
+
     def move_backward(self):
         if self.direction == "N":
             self.y -= 1
@@ -34,6 +28,29 @@ class Spacecraft:
             self.y += 1
         elif self.direction == "W":
             self.x += 1
+        elif self.direction == "Up":
+            self.z -= 1  # Decrease z for "Up"
+        elif self.direction == "Down":
+            self.z += 1  # Increase z for "Down"
+
+
+    def rotate_right(self):
+        directions = ["N", "E", "S", "W"]
+        current_index = directions.index(self.direction)
+        new_index = (current_index + 1) % len(directions)
+        self.direction = directions[new_index]
+
+    def turn_down(self):
+        if self.direction == "N":
+            self.direction = "D"
+        elif self.direction == "E":
+            self.direction = "D"
+        elif self.direction == "S":
+            self.direction = "U"
+        elif self.direction == "W":
+            self.direction = "U"
+    
+
     
     def turn_up(self):
         if self.direction == "N":
