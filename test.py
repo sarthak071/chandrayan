@@ -31,6 +31,36 @@ class TestSpacecraftMethods(unittest.TestCase):
         spacecraft = Spacecraft(0, 0, 0, "N")
         spacecraft.turn_down()
         self.assertEqual(spacecraft.direction, "D")
+
+    def test_rotate_left_N(self):
+        spacecraft = Spacecraft(0, 0, 0, "N")
+        spacecraft.rotate_left()
+        self.assertEqual(spacecraft.direction, "W")
+
+    def test_rotate_left_E(self):
+        spacecraft = Spacecraft(0, 0, 0, "E")
+        spacecraft.rotate_left()
+        self.assertEqual(spacecraft.direction, "N")
+
+    def test_rotate_left_S(self):
+        spacecraft = Spacecraft(0, 0, 0, "S")
+        spacecraft.rotate_left()
+        self.assertEqual(spacecraft.direction, "E")
+
+    def test_rotate_left_W(self):
+        spacecraft = Spacecraft(0, 0, 0, "W")
+        spacecraft.rotate_left()
+        self.assertEqual(spacecraft.direction, "S")
+
+    def test_rotate_left_Up(self):
+        spacecraft = Spacecraft(0, 0, 0, "Up")
+        spacecraft.rotate_left()
+        self.assertEqual(spacecraft.direction, "Up")
+
+    def test_rotate_left_Down(self):
+        spacecraft = Spacecraft(0, 0, 0, "Down")
+        spacecraft.rotate_left()
+        self.assertEqual(spacecraft.direction, "Down")
     
 
 
