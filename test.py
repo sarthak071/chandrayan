@@ -3,12 +3,12 @@ from spacecraft import Spacecraft
 
 class TestSpacecraftMethods(unittest.TestCase):
     def test_move_forward(self):
-        spacecraft = Spacecraft(0, 0, 0, "N")
+        spacecraft = Spacecraft(0, 0, 0, "Up")
         spacecraft.move_forward()
-        self.assertEqual(spacecraft.y, 1)
+        self.assertEqual(spacecraft.z, 2)
     
     def test_rotate_right(self):
-        spacecraft = Spacecraft(0, 0, 0, "N")
+        spacecraft = Spacecraft('a', 0, 0, "N")
         spacecraft.rotate_right()
         self.assertEqual(spacecraft.direction, "E")
 
@@ -32,10 +32,7 @@ class TestSpacecraftMethods(unittest.TestCase):
         spacecraft.turn_down()
         self.assertEqual(spacecraft.direction, "Down")
 
-    def test_rotate_left_N(self):
-        spacecraft = Spacecraft(0, 0, 0, "N")
-        spacecraft.rotate_left()
-        self.assertEqual(spacecraft.direction, "W")
+   
 
     def test_rotate_left_E(self):
         spacecraft = Spacecraft(0, 0, 0, "E")

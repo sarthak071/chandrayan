@@ -6,6 +6,7 @@ class Spacecraft:
         self.direction = direction
 
     def move_forward(self):
+        i =2
         if self.direction == "N":
             self.y += 1
         elif self.direction == "S":
@@ -15,7 +16,7 @@ class Spacecraft:
         elif self.direction == "W":
             self.x -= 1
         elif self.direction == "Up":
-            self.z += 1
+            self.z += i
         elif self.direction == "Down":
             self.z -= 1
 
