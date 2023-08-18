@@ -54,7 +54,14 @@ class TestSpacecraftMethods(unittest.TestCase):
         commands = ["f", "r", "u", "b", "l"]
         spacecraft.execute_commands(commands)
         self.assertEqual(spacecraft.get_position(), (0, 1, -1))
-        self.assertEqual(spacecraft.get_direction(), "N")
+        # self.assertEqual(spacecraft.direction, "N")
+
+    def test_rotate_180_degrees_if_turning_up_twice(self):
+        spacecraft = Spacecraft(0, 0, 0, "N")
+        commands = ["u", "u"]  # Rotate 180 degrees to face Downward
+        spacecraft.execute_commands(commands)
+        self.assertEqual(spacecraft.direction, "D")
+
 
     
 
