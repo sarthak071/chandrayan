@@ -69,7 +69,8 @@ class Spacecraft:
             self.direction = "Down"
 
     def execute_commands(self, commands):
-        for command in commands:
+        for i in range(len(commands)):
+            command = commands[i]
             if command == "f":
                 self.move_forward()
             elif command == "b":
@@ -79,7 +80,10 @@ class Spacecraft:
             elif command == "r":
                 self.rotate_right()
             elif command == "u":
-                self.turn_up()
+                if i < len(commands) - 1 and commands[i+1] == "u":
+                    self.direction = "D"  # Turn 180 degrees to face Downward
+                else:
+                    self.turn_up()
             elif command == "d":
                 self.turn_down()
 
